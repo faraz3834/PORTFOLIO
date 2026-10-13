@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Khan | Portfolio</title>
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary: #0ea5e9; /* Neon Blue */
+            --primary-hover: #0284c7;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Section Layout */
+        section {
+            min-height: 100vh;
+            padding: 100px 20px 60px; /* Padding for fixed nav */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .bg-alt {
+            background-color: #0b1120;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        p {
+            max-width: 700px;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Interactive Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            margin: 10px;
+            background-color: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        /* Grid Layouts for Skills & Projects */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1120;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Typing cursor animation */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background-color: var(--primary);
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <p style="color: var(--primary); font-weight: bold; letter-spacing: 2px;">HELLO, WORLD.</p>
+        <h1>I'm <span id="typing-text" class="highlight"></span><span class="cursor"></span></h1>
+        <p style="font-size: 1.5rem; color: #fff; margin-top: 10px;">First-Year CSE AI Student at KIET</p>
+        <div style="margin-top: 20px;">
+            <a href="#about" class="btn">About Me</a>
+            <a href="#contact" class="btn btn-outline">Let's Connect</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-alt">
+        <h2>About Me</h2>
+        <p>
+            I am a first-year Computer Science and Artificial Intelligence student at KIET Deemed to be University. Starting my university journey without a prior programming background hasn't held me back—it has only fueled my drive to learn and grow rapidly.
+        </p>
+        <p>
+            I consider myself a passionate, smart worker who is ready to tackle everything head-on. Whether it's debugging code or exploring new technologies, I am fully committed to building a strong foundation in software engineering and AI.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Arsenal</h2>
+        <p>The technologies and concepts I am currently mastering.</p>
+        <div class="grid">
+            <div class="card">
+                <h3 class="highlight">C++</h3>
+                <p>Building strong problem-solving logic and exploring object-oriented programming concepts.</p>
+            </div>
+            <div class="card">
+                <h3 class="highlight">Web Designing</h3>
+                <p>Creating structured, responsive, and visually appealing user interfaces for the web.</p>
+            </div>
+            <div class="card">
+                <h3 class="highlight">Cloud Computing</h3>
+                <p>Understanding modern infrastructure and how applications scale in cloud environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-alt">
+        <h2>Projects</h2>
+        <div class="grid" style="max-width: 600px;">
+            <div class="card" style="text-align: center; padding: 4rem 2rem;">
+                <h3 style="font-size: 2rem;">Coming Soon 🚀</h3>
+                <p>I am currently laying down the groundwork and building my skills. I am incredibly looking forward to making and sharing exciting projects very soon!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <p>Feel free to reach out for collaborations, project discussions, or just to say hi!</p>
+        <div style="margin-top: 30px;">
+            <!-- Opens phone dialer -->
+            <a href="tel:9548661092" class="btn">📞 Call Me</a>
+            <!-- Opens Instagram -->
+            <a href="https://instagram.com/ft._.faraz" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📸 Instagram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Faraz Khan. Designed & Coded with passion.</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Typing effect for the hero section
+        const textElement = document.getElementById('typing-text');
+        const text = "Faraz Khan"; 
+        let index = 0;
+        
+        function typeEffect() {
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 120);
+            }
+        }
+        
+        // Initialize typing effect after a short delay
+        setTimeout(typeEffect, 500);
+
+        // Add smooth reveal effect for cards when scrolling
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
